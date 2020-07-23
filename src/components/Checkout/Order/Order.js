@@ -4,7 +4,6 @@ import Assets from '../../../assets/assets';
 import classes from './Order.module.css';
 
 const Order = (props) => {
-    console.log(props)
     const ingredients = JSON.parse(props.ingredients);
     const customers = JSON.parse(props.customer);
     const order = Object.keys(ingredients).map(ingKey => {
