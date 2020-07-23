@@ -53,3 +53,16 @@
     font-size: 12px;
     font-weight: bold;
 }
+
+@media(max-width: 600px) {
+    .Input {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Input input {
+        width: 100%;
+        box-sizing: border-box;
+        height: 45px;
+    }
+}

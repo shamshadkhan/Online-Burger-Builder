@@ -27,7 +27,8 @@
 
 @media(max-width: 600px) {
 
-    .Auth {
-        width: 500px;
+    .AuthForm {
+        align-items: flex-start;
+        flex-direction: column;
     }
 }
