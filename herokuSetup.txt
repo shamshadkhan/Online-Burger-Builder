@@ -1,0 +1,2 @@
+1. find npm , node version
+2. add them to package json under engines
