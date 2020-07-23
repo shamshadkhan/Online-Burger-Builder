@@ -32,7 +32,7 @@ class Orders extends Component {
                     key={order.id} 
                     ingredients={order.ingredients} 
                     customer={order.customer} 
-                    totalPrice={order.price}/>
+                    totalPrice={parseFloat(order.price)}/>
                 })
             } 
             else {
