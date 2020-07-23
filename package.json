@@ -2,6 +2,10 @@
   "name": "burger-builder",
   "version": "0.1.0",
   "main": "index.js",
+  "engines": {
+    "node": "13.0.1",
+    "npm": "6.14.6"
+  }
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
