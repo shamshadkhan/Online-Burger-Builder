@@ -1,0 +1,19 @@
+.Checkout {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.Checkout p:nth-child(2) {
+    cursor: pointer;
+    color : blue;
+}
+
+
+
+@media(max-width: 600px) {
+
+    .Checkout {
+        width: 500px;
+    }
+}

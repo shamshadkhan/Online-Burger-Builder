@@ -1,0 +1,133 @@
+.BuildControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    padding: 15px;
+    background: rgba(0,0,0,0.5);
+    font-size: 17px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 5px;
+}
+
+.BuildControl .Buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.BuildControl button.More {
+    margin: 0 5px;
+    width: 80px;
+    outline: none;
+    box-shadow:inset 0px 1px 0px 0px #bee2f9;
+	background:linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+	background-color:#63b8ee;
+	border-radius:6px;
+	border:1px solid #3866a3;
+	display:inline-block;
+	cursor:pointer;
+	color:#14396a;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #7cacde;
+}
+
+.BuildControl button.Less {
+    margin: 0 5px;
+    width: 80px;
+    outline: none;
+    box-shadow:inset 0px 1px 0px 0px #f7c5c0;
+	background:linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+	background-color:#fc8d83;
+	border-radius:6px;
+	border:1px solid #d83526;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+
+.BuildControl button:disabled {
+    cursor: default;
+    box-shadow:inset 0px 0px 14px -3px #f2fadc;
+	background:linear-gradient(to bottom, #dbe6c4 5%, #9ba892 100%);
+	background-color:#dbe6c4;
+	border-radius:6px;
+	border:1px solid #b2b8ad;
+	display:inline-block;
+	cursor:pointer;
+	color:#757d6f;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ced9bf;
+}
+
+.BuildControl button:hover:disabled {
+    background:linear-gradient(to bottom, #9ba892 5%, #dbe6c4 100%);
+	background-color:#9ba892;
+    cursor: not-allowed;
+}
+
+.Label {
+    padding: 10px;
+    font-weight: bold;
+	width: 180px;
+	display: flex;
+	flex-direction: row;
+    justify-content: flex-start;
+    align-self: center;
+    align-items: center;
+}
+
+.Label img {
+	margin-right: 10px;
+	width: 50px;
+	height: 50px;
+}
+
+.BuildControl .Less {  
+    background-color: #fc8d83;
+    color: #ffffff;
+}
+
+.BuildControl .More {
+    background-color: #63b8ee;
+    color: #14396a;
+}
+
+.BuildControl .Less:hover, .BuildControl .Less:active {  
+    background:linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+	background-color:#e4685d;
+}
+
+.BuildControl .More:hover,.BuildControl .More:active {
+    background:linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+	background-color:#468ccf;
+}
+
+@media (max-width:500px) {
+	.Label {
+		width: 100px;
+		font-size: 0.8rem;
+	}
+
+	.Label img {
+		width: 40px;
+		height: 40px;
+	}
+}

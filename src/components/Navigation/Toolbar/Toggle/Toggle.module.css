@@ -1,0 +1,15 @@
+.Toggle {
+    height: 70%;
+    width: 35px;
+}
+
+.Toggle img{
+    height: 100%;
+    width: 100%;
+}
+
+@media(min-width:500px) {
+    .Toggle {
+        display: none;
+    }
+}

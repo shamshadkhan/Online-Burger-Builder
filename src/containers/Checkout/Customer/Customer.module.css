@@ -1,0 +1,20 @@
+.Customer {
+    width: 100%;
+    text-align: center;
+    margin-top:20px;
+}
+
+.CustomerForm {
+    width: 80%;
+    margin: auto;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 3px grey;
+    padding: 10px;
+}
+
+@media(max-width: 600px) {
+
+    .Customer {
+        width: 500px;
+    }
+}

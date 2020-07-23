@@ -1,0 +1,132 @@
+.Order {
+    width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 2px grey;
+    margin-bottom: 10px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.Order h1 {
+    display: flex;
+    background: grey;
+    color: white;
+    padding: 10px;
+    border-radius: 15px 15px 0px 0px;
+    font-size: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+
+.Order h1 span {
+    text-transform: capitalize;
+}
+
+.Order h1 span:nth-child(2) {
+    color: cyan;
+    font-size: 15px;
+}
+
+.Order a {
+    text-decoration: none;
+    color: white;
+}
+
+.Order ul {
+    padding-inline-start: 0px;
+}
+
+.Order li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: center;
+    padding: 0px 15px;
+    font-size: 15px;
+}
+
+.Order li span:first-child {
+    align-items: center;
+    align-self: center;
+    padding: 5px 0px;
+    display: flex;    
+    text-transform: capitalize;
+}
+
+.Order li span:first-child img {
+    margin-right: 10px;
+}
+
+.OrderDetail .Item li span:first-child {
+    width: 95px;
+}
+
+.Order .Item li:last-child {
+    margin-top: 10px;
+    padding: 10px 10px;
+}
+
+.Order .Item li:last-child span:last-child {
+    color:green;
+    border-top: 1px solid #e9ecef ;
+    width: 30%;
+    text-align: start;
+}
+
+.Order li span img {
+    width:20px;
+    height: 20px;
+}
+
+.OrderDetail {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+}
+
+.OrderDetail .Item {
+    padding-right: 10px;
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    width: 50%;
+}
+
+
+.CustomerDetail {
+    width: 50%;
+    border-left: 1px solid grey;
+}
+
+.CustomerDetail li span:first-child {
+    text-transform: none;
+}
+
+.CustomerDetail li span img {
+    width:20px;
+    height: 20px;
+}
+
+@media (max-width:500px){
+    .Order h1 {
+        font-size: 15px;
+    }
+    .OrderDetail {
+       display: flex;
+       flex-direction: column;
+       width: 100%;
+       box-sizing: border-box;
+    }
+    .OrderDetail .Item {
+        width: 100%;
+    }
+
+    .OrderDetail .Item li {
+        justify-content: space-between;
+    }
+    
+    .CustomerDetail {
+        border-left: 0px;
+        border-top: 1px solid grey;
+        width: 100%;
+    }
+}

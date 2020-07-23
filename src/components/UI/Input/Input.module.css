@@ -1,0 +1,55 @@
+.Input{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    box-sizing: border-box;
+}
+
+.Input label {
+    padding: 10px;
+    width: 150px;
+    text-align: left;
+}
+
+.Input input {
+    box-shadow: inset -1px -1px 3px 1px grey;
+    height: 15px;
+    width: calc(100% - 150px);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.Input select {
+    box-shadow: inset -1px -1px 3px 1px grey;
+    height: 40px;
+    width: calc(100% - 120px);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.Input textarea {
+    box-shadow: inset -1px -1px 3px 1px grey;
+    height: 80px;
+    width: calc(100% - 150px);
+    border-radius: 5px;
+    padding: 10px;
+
+}
+
+.Error {
+    box-shadow: inset -1px -1px 3px 1px red !important;
+    background-color: salmon;
+    border: 1px solid red;
+}
+
+.ErrorMessage {
+    color: red;
+    margin: 0px;
+    text-align: left;
+    margin-left: 175px;
+    margin-top: -10px;
+    font-size: 12px;
+    font-weight: bold;
+}

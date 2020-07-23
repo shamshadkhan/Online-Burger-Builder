@@ -1,0 +1,10 @@
+.BurgerBuilder {
+    width:80%;
+    margin: auto;
+    text-align: center;
+}
+
+.BurgerBuilder p:nth-child(2) {
+    cursor: pointer;
+    color : blue;
+}
