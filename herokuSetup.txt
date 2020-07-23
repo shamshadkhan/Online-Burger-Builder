@@ -1,2 +1,5 @@
 1. find npm , node version
 2. add them to package json under engines
+3. add "heroku-postbuild": "npm run build"
+4. npm add serve --save
+5. change "start": "serve -s build"
