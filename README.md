@@ -19,9 +19,8 @@ Description: Its a project using Reactjs Framework redux, for building burger an
      1. go to root directory of root folder
      2. run git bash
      3. run command 'npm install'
-     4. run command 'npm run dev'
+     4. run command 'npm start'
      5. bash provides the url go to the url http://localhost:3000/
      
 ## Demo
 
-https://nextjs-project.shamshadcse90.now.sh/
