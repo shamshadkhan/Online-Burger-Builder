@@ -25,4 +25,3 @@ Description: Its a project using Reactjs Framework redux, for building burger an
 ## Demo
 
 1. https://react-burger-builder-45.herokuapp.com/
-2. https://react-burger-builder-45.herokuapp.com/api/ (for burger builder api)
