@@ -39,7 +39,6 @@ const Reducer = (state = initialState, action) => {
         case actionTypes.FETCH_PURCHASE_SUCCESS:
             return {
                 ...state,
-                orders : state.orders.concat(action.payload),
                 loading : false,
                 error: null,
                 purchase : true
