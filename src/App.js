@@ -21,45 +21,38 @@ const asyncAuth = AsynComponent(()=>{
 })
 
 class App extends Component {
-  state = {
-    isLoading : true
-  }
 
-  async componentDidMount() {
-    await this.props.IsLoggedIn();
-    this.setState({isLoading:false});
+  componentDidMount = () => {
+    this.props.IsLoggedIn();
   }
 
   render () {
-    let route = null;
-    if(!this.state.isLoading){
+    let route = (
+      <Switch>
+        <Route path="/auth" component={asyncAuth}/>
+        <Route path="/" exact component={BurgerBuilder}/>
+        <Redirect to="/"/>
+      </Switch>
+    )
+    
+    if(this.props.isAuth) {
       route = (
         <Switch>
+          <Route path="/orders" component={asyncOrders}/>
+          <Route path="/checkout" component={asyncCheckout}/>
           <Route path="/auth" component={asyncAuth}/>
+          <Route path="/logout" component={Logout}/>
           <Route path="/" exact component={BurgerBuilder}/>
           <Redirect to="/"/>
         </Switch>
       )
-      
-      if(this.props.isAuth) {
-        route = (
-          <Switch>
-            <Route path="/checkout" component={asyncCheckout}/>
-            <Route path="/orders" component={asyncOrders}/>
-            <Route path="/auth" component={asyncAuth}/>
-            <Route path="/logout" component={Logout}/>
-            <Route path="/" exact component={BurgerBuilder}/>
-            <Redirect to="/"/>
-          </Switch>
-        )
-      }
     }
     return (
       <div>
         <AuthContext.Provider value={{isAuth:this.props.isAuth}}>
-          <Layout>
-            {route}
-          </Layout>
+        <Layout>
+          {route}
+        </Layout>
         </AuthContext.Provider>
       </div>
     );
