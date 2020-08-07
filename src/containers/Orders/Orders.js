@@ -3,6 +3,7 @@ import Order from '../../components/Checkout/Order/Order';
 import axios from '../../axios-orders';
 import Spinner from '../../components/UI/Spinner/Spinner';
 import WithErrorHandler from '../../hoc/WithErrorHandler';
+import Pagination from "react-js-pagination";
 
 import classes from './Orders.module.css';
 
@@ -12,7 +13,8 @@ import * as actionCreators from '../../store/actions/actions';
 class Orders extends Component {
 
     state = {
-        message : 'No Orders Available'
+        message : 'No Orders Available',
+        activePage : 1
     }
 
     componentDidMount = () => {
@@ -23,17 +25,30 @@ class Orders extends Component {
         this.props.history.push('/');
     }
 
+    handlePageChange(page) {
+        this.setState({activePage: page});
+        this.props.FetchOrders(page);
+    }
+
     render() {
         let orderList = <Spinner/>
+        let pagination = null;
         if(!this.props.loading) {
-            if(this.props.orders.length>0){
-                orderList = this.props.orders.map(order => {
+            if(this.props.orders.data && this.props.orders.data.length>0){
+                orderList = this.props.orders.data.map(order => {
                     return <Order 
                     key={order.id} 
                     ingredients={order.ingredients} 
                     customer={order.customer} 
                     totalPrice={parseFloat(order.price)}/>
                 })
+                pagination = <Pagination
+                    activePage={this.state.activePage}
+                    itemsCountPerPage={this.props.orders.last_page}
+                    totalItemsCount={this.props.orders.total}
+                    pageRangeDisplayed={5}
+                    onChange={this.handlePageChange.bind(this)}
+                />
             } 
             else {
                 orderList = (
@@ -47,6 +62,7 @@ class Orders extends Component {
         return (
             <div className={classes.Orders}>
                 {orderList}
+                {pagination}
             </div>
         )
     }
@@ -62,7 +78,7 @@ const mapStatetoProps = state => {
 
 const mapDispatchtoProps = dispatch => {
     return {
-        FetchOrders : () => dispatch(actionCreators.fetchOrders())
+        FetchOrders : (page) => dispatch(actionCreators.fetchOrders(page))
     }
 };
 

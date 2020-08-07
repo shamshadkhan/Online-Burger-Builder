@@ -8,21 +8,25 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from './store/reducers/reducers';
+import createSagaMiddleware from 'redux-saga';
+import {rootSaga} from './store/sagas/sagas';
 
 
 // composerEnhaancers
 const composerEnhancers = process.env.NODE_ENV === 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : null || compose;
 
-const store = createStore(rootReducer,composerEnhancers(applyMiddleware(thunk)));
+const sagaMiddleware = createSagaMiddleware();
+
+const store = createStore(rootReducer,composerEnhancers(applyMiddleware(thunk,sagaMiddleware)));
+
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-  <React.StrictMode>
     <Provider store={store}>
     <BrowserRouter>
-    <App />
+     <App />
     </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+    </Provider>,
   document.getElementById('root')
 );
 

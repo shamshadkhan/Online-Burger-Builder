@@ -17,7 +17,7 @@ const Reducer = (state = initialState, action) => {
         case actionTypes.FETCH_ORDERS_SUCCESS:
             return {
                 ...state,
-                orders : action.payload.data,
+                orders : action.payload,
                 loading : false,
                 error: null,
                 purchase : false
