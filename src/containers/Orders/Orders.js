@@ -44,7 +44,7 @@ class Orders extends Component {
                 })
                 pagination = <Pagination
                     activePage={this.state.activePage}
-                    itemsCountPerPage={this.props.orders.last_page}
+                    itemsCountPerPage={this.props.orders.per_page}
                     totalItemsCount={this.props.orders.total}
                     pageRangeDisplayed={5}
                     onChange={this.handlePageChange.bind(this)}
